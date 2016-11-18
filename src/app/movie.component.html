@@ -1,0 +1,29 @@
+<div class="container">
+  <div id="header2">
+    
+    <h3> Search Movie By Title </h3>
+    
+  </div>
+    
+</div>
+
+<div class='searchContainer'>
+	<input #query>
+    <button (click)="searchMovie(query.value)">Search!</button>
+</div>
+
+  <div class="row searchContainer">
+    <div class="col-sm-1">
+      
+      <h4>{{movie.Title}}</h4>
+
+    </div>
+    <div class="col-sm-3">Genre: {{movie.Genre}}</div>
+
+    <div class="col-sm-3">Actors: {{movie.Actors}}</div>
+    <div class="col-sm-3">Director: {{movie.Director}}</div>
+    <div class="col-sm-2">Plot: {{movie.Plot}}</div>
+    <div class="col-sm-2">Language: {{movie.Language}}</div>
+    <div class="col-sm-2">IMDB Rating: {{movie.imdbRating}}</div>
+    <div class="col-sm-2">Poster: <img src={{movie.Poster}}></div>
+  </div>

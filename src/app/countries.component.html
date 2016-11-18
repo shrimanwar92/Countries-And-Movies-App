@@ -1,0 +1,19 @@
+<div class='searchContainer'>
+<h3>COUNTRIES</h3>
+<div *ngFor="let country of countries">
+  <div class="row">
+    <div class="col-sm-1">
+      
+      <a [routerLink]="['/country', country.alpha3Code, 'details']">{{country.name}}</a>
+
+    </div>
+    <div class="col-sm-3">Code: {{country.alpha3Code}}</div>
+    <div class="col-sm-3">Capital: {{country.capital}}</div>
+    <div class="col-sm-3">Native Name: {{country.nativeName}}</div>
+    <div class="col-sm-2">Currency: {{country.currencies[0]}}</div>
+  </div>
+    <div class="row">
+      <div class="col-sm-12 tweettext">{{country.region}} | {{country.subregion}}</div>
+    </div>
+  </div>
+</div>
