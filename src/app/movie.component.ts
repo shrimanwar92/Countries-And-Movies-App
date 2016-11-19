@@ -14,6 +14,7 @@ export class MovieComponent {
   errorMessage: string;
   //tweets: Tweet[];
   movies: any[];
+  moviesFound: boolean = false;
   mode = 'Observable';
 
   constructor(private movieService: MovieService, private route: ActivatedRoute) { }
@@ -22,7 +23,16 @@ export class MovieComponent {
     //alert(query)
     this.movieService.searchMovieByName(query)
       .subscribe(
-         movies => this.movies = movies,
-         error =>  this.errorMessage = <any>error);
+         movies => {
+           console.log(movies)
+           this.movies = movies;
+           this.moviesFound = true;
+           
+         },
+         error =>  {
+           this.errorMessage = <any>error;
+           this.moviesFound = false;
+         }
+      );
   }
 }

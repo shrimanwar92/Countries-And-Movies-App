@@ -16,10 +16,15 @@ export class MovieService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body.Search || {};
+    if(body.Response) {
+      return body.Search;
+    } else {
+      return body.Error;
+    }
   }
 
   private handleError (error: any) {
+    alert('g')
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     return Observable.throw(errMsg);
