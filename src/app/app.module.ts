@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries.component';
 import { CountryDetailsComponent } from './countrydetails.component';
 import { MovieComponent } from './movie.component';
+//import { CountryFilterPipe } from './countryFilterPipe';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'countries', pathMatch: 'full' },
@@ -22,6 +23,7 @@ export const routes: Routes = [
     CountriesComponent,
     CountryDetailsComponent,
     MovieComponent
+   // CountryFilterPipe
   ],
   imports: [
     BrowserModule,

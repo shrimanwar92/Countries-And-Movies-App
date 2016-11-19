@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryService } from './countries.service';
 import { CountryDetailsComponent } from './countrydetails.component';
+//import { CountryFilterPipe } from './countryFilterPipe';
 
 @Component({
   selector: 'corc-tweets',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css'],
   providers: [CountryService]
+  //pipes: [CountryFilterPipe]
   //pipes: [TwitterDateWithTimePipe]
 })
 

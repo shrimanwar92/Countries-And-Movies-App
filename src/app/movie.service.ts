@@ -5,11 +5,10 @@ import './rxjs-operators';
 
 @Injectable()
 export class MovieService {
-  movie = {};
   constructor (private http: Http) {}
 
-  searchMovieByName(query: string) {
-    let url = "http://www.omdbapi.com/?t="+ query +"&y=&plot=short&r=json";
+  searchMovieByName(query: string): Observable<any[]> {
+    let url = "http://www.omdbapi.com/?s="+ query +"&y=&plot=short&r=json";
     return this.http.get(url)
                     .map(this.extractData)
                     .catch(this.handleError);
@@ -17,7 +16,7 @@ export class MovieService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body || {};
+    return body.Search || {};
   }
 
   private handleError (error: any) {

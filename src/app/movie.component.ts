@@ -10,10 +10,10 @@ import { MovieService } from './movie.service';
   //pipes: [TwitterDateWithTimePipe]
 })
 
-export class MovieComponent implements OnInit {
+export class MovieComponent {
   errorMessage: string;
   //tweets: Tweet[];
-  movie = {};
+  movies: any[];
   mode = 'Observable';
 
   constructor(private movieService: MovieService, private route: ActivatedRoute) { }
@@ -22,7 +22,7 @@ export class MovieComponent implements OnInit {
     //alert(query)
     this.movieService.searchMovieByName(query)
       .subscribe(
-         movie => this.movie = movie,
+         movies => this.movies = movies,
          error =>  this.errorMessage = <any>error);
   }
 }
