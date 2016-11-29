@@ -11,7 +11,7 @@ export class CountryService {
   constructor (private http: Http) {}
 
   getCountries(): Observable<any[]> {
-    return this.http.get('http://localhost:8080/countries')
+    return this.http.get('https://restcountries.eu/rest/v1')
                     .map(this.extractData)
                     .catch(this.handleError);
   }
